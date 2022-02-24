@@ -49,11 +49,11 @@ public class Refreshutility {
                 for(Integer i=0 ; i <  objecttofields.get(obj).size() ; i++  ){
                     String fld = objecttofields.get(obj)[i];
                     if(i == 0 ){
-                        query = query+' ('+fld+' <> null OR' ;
+                        query = query+' ( ('+fld+' <> null AND '+fld+' <> maskedvalue ) OR' ;
                     }else if(i < (objecttofields.get(obj).size()-1)){
-                        query = query+' '+fld+' <> null OR' ;
+                        query = query+' ('+fld+' <> null AND '+fld+' <> maskedvalue ) OR' ;
                     } else {
-                        query = query+' '+fld+' <> null )';
+                        query = query+' ('+fld+' <> null AND '+fld+' <> maskedvalue ))';
                     }
                 }
             }
