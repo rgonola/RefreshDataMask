@@ -1,5 +1,5 @@
 public class RefreshUtil_ScheduleJobfordataupdate implements Database.Batchable<sObject> {
-	
+  
     public String query;
     public String maskedval;
     public List<String> fieldlst;
@@ -23,7 +23,7 @@ public class RefreshUtil_ScheduleJobfordataupdate implements Database.Batchable<
             for(String sl: fieldlst){
                 if( null <> s.get(sl) &&  s.get(sl) <> maskedval){
                     s.put(sl,maskedval);
-		    sobjectupdates.add(s);
+                sobjectupdates.add(s);
                 }
             }
            
